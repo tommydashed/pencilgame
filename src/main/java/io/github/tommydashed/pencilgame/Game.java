@@ -20,11 +20,24 @@ public class Game {
         System.out.println(first + " is going first!");
     }
 
-    // read the pencil count
+    // read the pencil count and validate the input
     private int readPencilCount() {
         System.out.println("How many pencils would you like to use:");
-        String line = scanner.nextLine().trim();
-        return Integer.parseInt(line);
+        while (true) {
+            String line = scanner.nextLine().trim();
+            int count;
+            try {
+                count = Integer.parseInt(line);
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a number:");
+                continue;
+            }
+            if (count <= 0) {
+                System.out.println("Please enter a number greater than 0:");
+                continue;
+            }
+            return count;
+        }
     }
 
     private String readPlayerName() {

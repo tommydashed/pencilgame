@@ -42,6 +42,13 @@ public class Game {
 
     private String readPlayerName() {
         System.out.println("Who will be first player:");
-        return scanner.nextLine().trim();
+        while (true) {
+            String name = scanner.nextLine().trim();
+            if (name.equals("PlayerA") || name.equals("PlayerB")) {
+                return name;
+            } else {
+                System.out.println("Please enter valid player name:");
+            }
+        }
     }
 }

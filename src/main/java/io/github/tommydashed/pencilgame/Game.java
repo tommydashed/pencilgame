@@ -6,6 +6,13 @@ public class Game {
     private final Scanner scanner = new Scanner(System.in);
 
     public void run() {
+        setup();
+        play();
+    }
+
+
+    private void setup() {
+
         int pencils = readPencilCount(); //get pencil count input and store value in var
         String first = readPlayerName(); // get player name input and store in var
 
@@ -18,6 +25,10 @@ public class Game {
         // print a new line then print line with string
         System.out.println();
         System.out.println(first + " is going first!");
+    }
+
+    private void play() {
+
     }
 
     // read the pencil count and validate the input
